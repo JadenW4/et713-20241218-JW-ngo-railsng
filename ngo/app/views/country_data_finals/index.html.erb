@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Country Data Finals" %>
+
+<!-- Main Heading - Section with Border -->
+<h1 class="w3-text-blue w3-center w3-padding w3-border-bottom">Country Data Finals</h1>
+
+<div id="country_data_finals" class="w3-container">
+  <% @country_data_finals.each do |country_data_final| %>
+    <!-- Card for each Country Data Final -->
+    <div class="w3-card-4 w3-margin w3-padding w3-border">
+      <%= render country_data_final %>
+      <p>
+        <%= link_to "Show this country data final", country_data_final, class: "w3-button w3-blue w3-round" %>
+      </p>
+    </div>
+  <% end %>
+</div>
+
+<!-- New Country Data Final Button -->
+<%= link_to "New Country Data Final", new_country_data_final_path, class: "w3-button w3-green w3-round w3-margin-top" %>
